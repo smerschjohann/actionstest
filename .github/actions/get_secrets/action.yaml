@@ -13,6 +13,7 @@ runs:
       with:
         credentials: ${{ inputs.SECRET_PARAM }}
     - name: publish to environment
+      shell: bash
       run: |
         echo SECRET_GEN1=$${{ steps.secrets.output.secret1 }} >> $GITHUB_ENV
         echo SECRET_GEN2=$${{ steps.secrets.output.secret2 }} >> $GITHUB_ENV

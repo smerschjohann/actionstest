@@ -28,8 +28,12 @@ jobs:
   modify_chart:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: echo "${{ inputs.version }}" > version-${{ inputs.service }}.txt
+      - name: Commit report
         run: |
-          echo "${{ inputs.version }}" > version-${{ inputs.service }}.txt
-          git commit -a -m "${{ inputs.service }} version => ${{ inputs.version }}"
+          git config --global user.name 'Chart Updater'
+          git config --global user.email 'chart-updater@users.noreply.github.com'
+          git commit -am "update ${{ inputs.service }}: version=${{ inputs.version }}"
           git push

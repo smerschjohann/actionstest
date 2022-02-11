@@ -23,6 +23,6 @@ runs:
     - name: get them
       shell: bash
       run: |
-        output1=${{ inputs.credentials }}
+        output1="${{ inputs.credentials }}"
         echo "::set-output name=secret1::$output1"
         echo "::set-output name=secret2::topsecure"

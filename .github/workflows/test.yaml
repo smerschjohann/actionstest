@@ -24,7 +24,7 @@ jobs:
         uses: ./.github/actions/get_secrets
         name: get the secrets
         with:
-          SECRET_PARAM: ${{ secrets.test1 }}
+          SECRET_PARAM: "${{ secrets.SECRET1 }}"
       - run: |
           echo ok this is working fine
           echo our secret values: ${{ env.SECRET_GEN1 }}

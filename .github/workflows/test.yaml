@@ -14,7 +14,7 @@ jobs:
           echo our secret values: ${SECRET_GEN2}
           echo base64 $(echo $SECRET_GEN2 | base64)
 
-  call_workflow:
+  workflow_dispatch:
     needs:
       - play-with-secrets
     uses: smerschjohann/workflowtest/.github/workflows/service-version-updated.yaml@main

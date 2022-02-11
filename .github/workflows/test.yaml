@@ -21,3 +21,5 @@ jobs:
     with:
       service: "test"
       version: "1.2.4"
+    secrets:
+      pat: ${{ secrets.globalpat }}

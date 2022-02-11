@@ -1,5 +1,18 @@
 name: update service version
 on:
+  workflow_call:
+    inputs:
+      service:
+        description: the service name
+        required: false
+        type: string
+        default: ""
+      version:
+        description: the service version
+        required: false
+        type: string
+        default: "1.0.0"
+
   workflow_dispatch:
     inputs:
       service:

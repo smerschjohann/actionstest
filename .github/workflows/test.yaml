@@ -15,3 +15,14 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  play-with-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - id: secrets
+        uses: ./github/actions/get_secrets.yaml
+        name: get the secrets
+        with:
+          SECRET_PARAM: ${{ secrets.test1 }}
+      - run: |
+          echo ok this is working fine
+          echo our secret values: ${{ secrets.outputs }}

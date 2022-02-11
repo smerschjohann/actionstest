@@ -13,6 +13,6 @@ runs:
   steps:
     - id: secrets
       name: get secrets
-      uses: ./.github/actions/simulate_external.yaml
+      uses: ./.github/actions/simulate_external
       with:
         credentials: ${{ inputs.SECRET_PARAM }}

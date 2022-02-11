@@ -9,7 +9,7 @@ runs:
   steps:
     - id: secrets
       name: get secrets
-      uses: ./.github/actions/simulate_external
+      uses: ./.github/actions/simulate_external@main
       with:
         secrets: "not,used"
         credentials: ${{ inputs.SECRET_PARAM }}

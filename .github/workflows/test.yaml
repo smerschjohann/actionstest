@@ -20,9 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - id: secrets
-        uses: ./.github/actions/get_secrets
-        name: get the secrets
+      - uses: ./.github/actions/get_secrets
         with:
           SECRET_PARAM: "${{ secrets.SECRET1 }}"
       - run: |

@@ -4,10 +4,10 @@ on:
     inputs:
       service:
         description: the service name
-        required: true
+        required: false
       version:
         description: the service version
-        required: true
+        required: false
 
 jobs:
   modify_chart:

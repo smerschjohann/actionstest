@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: secrets
-        uses: ./github/actions/get_secrets.yaml
+        uses: .github/actions/get_secrets.yaml
         name: get the secrets
         with:
           SECRET_PARAM: ${{ secrets.test1 }}

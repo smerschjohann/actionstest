@@ -11,6 +11,7 @@ runs:
       name: get secrets
       uses: ./.github/actions/simulate_external
       with:
+        secrets: "not,used"
         credentials: ${{ inputs.SECRET_PARAM }}
     - name: publish to environment
       shell: bash

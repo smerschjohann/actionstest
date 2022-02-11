@@ -33,7 +33,8 @@ jobs:
         run: echo "${{ inputs.version }}" > version-${{ inputs.service }}.txt
       - name: Commit report
         run: |
+          git add .
           git config --global user.name 'Chart Updater'
           git config --global user.email 'chart-updater@users.noreply.github.com'
-          git commit -am "update ${{ inputs.service }}: version=${{ inputs.version }}"
+          git commit -m "update ${{ inputs.service }}: version=${{ inputs.version }}"
           git push

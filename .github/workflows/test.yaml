@@ -17,7 +17,7 @@ jobs:
   call_workflow:
     needs:
       - play-with-secrets
-    uses: smerschjohann/actionstest/.github/workflows/service-version-updated.yaml
+    uses: smerschjohann/actionstest/.github/workflows/service-version-updated.yaml@main
     with:
-      service: test
-      version: 1.2.3
+      service: "test"
+      version: "1.2.3"

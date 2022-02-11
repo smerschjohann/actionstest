@@ -6,7 +6,7 @@ inputs:
     required: true
 outputs:
   secrets:
-    value: ${{ steps.secrets.output }}
+    value: ${{ steps.secrets.outputs }}
     description: the gathered external secrets
 runs:
   using: composite

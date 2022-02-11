@@ -5,9 +5,11 @@ on:
       service:
         description: the service name
         required: false
+        default: ""
       version:
         description: the service version
         required: false
+        default: "1.0.0"
 
 jobs:
   modify_chart:

@@ -12,7 +12,13 @@ inputs:
       formatted private key which can be exported from the Cloud Console. The
       value can be raw or base64-encoded.
     required: false
-
+outputs:
+  secret1:
+    description: "secret1"
+    value: ${{ steps.ext.outputs.secret1 }}
+  secret2:
+    description: "secret2"
+    value: ${{ steps.ext.outputs.secret2 }}
 branding:
   icon: 'lock'
   color: 'blue'
@@ -20,7 +26,8 @@ branding:
 runs:
   using: composite
   steps:
-    - name: get them
+    - id: ext
+      name: get them
       shell: bash
       run: |
         output1="${{ inputs.credentials }}"
